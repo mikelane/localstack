@@ -173,7 +173,7 @@ def get_local_region():
 def get_local_service_url(service_name_or_port):
     """ Return the local service URL for the given service name or port. """
     if isinstance(service_name_or_port, int):
-        return '%s://%s:%s' % (get_service_protocol(), LOCALHOST, service_name_or_port)
+        return '%s://%s:%s' % (get_service_protocol(), config.LOCALSTACK_HOSTNAME, service_name_or_port)
     service_name = service_name_or_port
     if service_name == 's3api':
         service_name = 's3'
